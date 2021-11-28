@@ -56,7 +56,7 @@ LOGGER = logging.getLogger(__name__)
 
 # todo: connection string needs to change
 def connection_string():
-    user = 'admin'
+    user = 'postgres'
     host = '68.183.185.15'
     port = '5432'
     db = 'postgres'
