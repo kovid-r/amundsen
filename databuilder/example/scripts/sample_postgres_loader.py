@@ -29,8 +29,8 @@ from databuilder.publisher.neo4j_csv_publisher import Neo4jCsvPublisher
 from databuilder.task.task import DefaultTask
 from databuilder.transformer.base_transformer import NoopTransformer
 
-es_host = None
-neo_host = None
+es_host = '68.183.185.15'
+neo_host = '68.183.185.15'
 if len(sys.argv) > 1:
     es_host = sys.argv[1]
 if len(sys.argv) > 2:
@@ -44,7 +44,7 @@ DB_FILE = '/tmp/test.db'
 SQLITE_CONN_STRING = 'sqlite:////tmp/test.db'
 Base = declarative_base()
 
-NEO4J_ENDPOINT = f'bolt://{neo_host or "localhost"}:7687'
+NEO4J_ENDPOINT = f'bolt://{neo_host or "68.183.185.15"}:7687'
 
 neo4j_endpoint = NEO4J_ENDPOINT
 
@@ -57,7 +57,7 @@ LOGGER = logging.getLogger(__name__)
 # todo: connection string needs to change
 def connection_string():
     user = 'username'
-    host = 'localhost'
+    host = '68.183.185.15'
     port = '5432'
     db = 'postgres'
     return "postgresql://%s@%s:%s/%s" % (user, host, port, db)
